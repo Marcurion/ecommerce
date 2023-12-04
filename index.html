@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,700;1,9..40,400;1,9..40,700&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
     <link href="/dist/output.css" rel="stylesheet" />
     <script src="/script.js"></script>
+    <script src="/snipcart.js"></script>
+    <script src="https://kit.fontawesome.com/03b212847c.js" crossorigin="anonymous"></script>
 
 
   </head>
@@ -17,9 +19,19 @@
             <h1 class="text-2xl"><span class="italic">Man</span>Bags</h1>
             <p class="text-slate-400">Luxury bags for men.</p>
         </div>
-        <div class="ml-auto">
-            cart
+        <div class="ml-auto my-auto">
+            <button class="snipcart-checkout flex items-center relative">
+                <span class="snipcart-total-price text-sm">€ 0.0</span>
+                <i class="fa-solid fa-cart-shopping text-3xl p-2"></i>
+                <span class="snipcart-items-count absolute top-0 right-0 bg-blue-500 block w-5 h-5 text-xs rounded-full leading-5">0</span>
+            </button>
         </div>
+        <div class="pl-4 my-auto">        
+        <button class="snipcart-customer-signin pl-4 border-l border-l-white">
+            <i class="fa-solid fa-user text-3xl"></i>
+        </button>
+    </div>
+
     </nav>
     <main>
         <header class="flex bg-[url('/assets/bg.jpg')] bg-cover h-[calc(100vh-72px)] min-h-[400px]">
@@ -31,19 +43,76 @@
             </div>
             
         </header>
-        <section id="product-1" class="flex max-w-screen-xl mx-auto p-20 items-center gap-6">
-            <div class="min-w-[30%] max-w-[30%]"><img src="/assets/1.jpeg" alt="Alpine Elegance"></div>
+        <!---PRODCUT 1-->
+        <section id="product-1" class="product md:flex max-w-screen-xl mx-auto p-20 items-center gap-6">
+            <div class="md:min-w-[30%] md:max-w-[30%]"><img src="/assets/1.jpeg" alt="Alpine Elegance"></div>
             <div class="flex-grow">
                 <h1 class="text-7xl">Alpine Elegance</h1>
                 <p class="mt-8">Introducing the "Alpine Elegance" - where pristine beauty meets unparalleled craftsmanship. Crafted from the finest white leather, this luxury bag is inspired by the serene and untouched splendor of mountain peaks. Its sleek design, combined with functional compartments, makes it an ideal companion for the modern man on the go. Silver-tone hardware and meticulous stitching showcase its premium quality. Whether you're heading to a business meeting or a weekend getaway, the Alpine Elegance ensures you carry your essentials with style and sophistication. Elevate your accessory game and make a statement with this timeless piece.</p>
                 <p class="text-2xl mt-8">€79.99</p>
                 <label class="text-sm mt-8 inline-block">Quantity</label>
                 <div class="grid grid-cols-[100px_1fr] gap-8">
-                    <input type="number" value="1", min="1" class="border border-black rounded-md text-center px-2">
-                    <button class="bg-black text-white uppercase px-6 py-4 cursor-pointer font-bold rounded-md hover:bg-zinc-700 transition-colors">Add to cart</button>
+                    <input type="number" value="1", min="1" class="quantity border border-black rounded-md text-center px-2">
+                    <button 
+                    data-item-id="alpine-elegance" 
+                    data-item-price="79.99"
+                    data-item-description="Crafted from the finest white leather..."
+                    data-item-image="/assets/1.jpeg"
+                    data-item-name="Alpine Elegance"
+                    data-item-url="/"
+                    class="snipcart-add-item bg-black text-white uppercase px-6 py-4 cursor-pointer font-bold rounded-md hover:bg-zinc-700 transition-colors">Add to cart</button>
+                </div>
+            </div>
+        </section>
+        <!---PRODCUT 2-->
+        <section class="product md:flex flex-row-reverse max-w-screen-xl mx-auto p-20 items-center gap-6">
+            <div class="md:min-w-[30%] md:max-w-[30%]"><img src="/assets/2.jpeg" alt="Bianco Prestige"></div>
+            <div class="flex-grow">
+                <h1 class="text-7xl">Bianco Prestige</h1>
+                <p class="mt-8">Introducing the "Bianco Prestige" - Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti optio numquam veritatis rerum provident ipsum amet repellat eligendi ad at!</p>
+                <p class="text-2xl mt-8">€99.99</p>
+                <label class="text-sm mt-8 inline-block">Quantity</label>
+                <div class="grid grid-cols-[100px_1fr] gap-8">
+                    <input type="number" value="1", min="1" class="quantity border border-black rounded-md text-center px-2">
+                    <button 
+                    data-item-id="bianco-prestige" 
+                    data-item-price="99.99"
+                    data-item-description="Lorem ipsum dolor sit amet consectetur adipisicing elit. "
+                    data-item-image="/assets/2.jpeg"
+                    data-item-name="Bianco Prestige"
+                    data-item-url="/"
+                    class="snipcart-add-item bg-black text-white uppercase px-6 py-4 cursor-pointer font-bold rounded-md hover:bg-zinc-700 transition-colors">Add to cart</button>
+                </div>
+            </div>
+        </section>
+        <!---PRODCUT 3-->
+        <section class="product md:flex max-w-screen-xl mx-auto p-20 items-center gap-6">
+            <div class="md:min-w-[30%] md:max-w-[30%]"><img src="/assets/3.jpeg" alt="Ivory Icon"></div>
+            <div class="flex-grow">
+                <h1 class="text-7xl">Ivory Icon</h1>
+                <p class="mt-8">Introducing the "Ivory Icon" - Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque error natus facilis omnis delectus beatae magni, veniam nam quibusdam odit earum molestiae quidem, incidunt recusandae commodi itaque dolores ratione consectetur vitae velit necessitatibus saepe doloremque ipsam? Quidem dolores tenetur neque.</p>
+                <p class="text-2xl mt-8">€31.99</p>
+                <label class="text-sm mt-8 inline-block">Quantity</label>
+                <div class="grid grid-cols-[100px_1fr] gap-8">
+                    <input type="number" value="1", min="1" class="quantity border border-black rounded-md text-center px-2">
+                    <button 
+                    data-item-id="ivory-icon" 
+                    data-item-price="31.99"
+                    data-item-description="Lorem, ipsum error natus facilis omnis delectus beatae."
+                    data-item-image="/assets/3.jpeg"
+                    data-item-name="Ivory Icon"
+                    data-item-url="/"
+                    class="snipcart-add-item bg-black text-white uppercase px-6 py-4 cursor-pointer font-bold rounded-md hover:bg-zinc-700 transition-colors">Add to cart</button>
                 </div>
             </div>
         </section>
     </main>
+    <footer class="p-20 bg-gradient-to-r from-slate-800 to-zinc-800 text-white text-3xl">
+        <div class="flex justify-center gap-8">
+            <a href="http://facebook.com"><i class="fa-brands fa-facebook hover:text-blue-500 transition-colors"></i></a>
+            <a href="http://youtube.com"><i class="fa-brands fa-youtube hover:text-red-500 transition-colors"></i></a>
+            <a href="http://instagram.com"><i class="fa-brands fa-instagram hover:text-pink-500 transition-colors"></i></a>
+        </div>
+    </footer>
   </body>
 </html>

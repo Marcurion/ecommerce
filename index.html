@@ -3,9 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,700;1,9..40,400;1,9..40,700&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
     <link href="/dist/output.css" rel="stylesheet" />
+    <script src="/script.js"></script>
+
+
   </head>
   <body>
-    <h1 class="text-3xl font-bold underline text-pink-300">Hello world!</h1>
+    <nav class="py-2 px-4 bg-black text-white sticky top-0 z-10 flex">
+        <div>
+            <h1 class="text-2xl"><span class="italic">Man</span>Bags</h1>
+            <p class="text-slate-400">Luxury bags for men.</p>
+        </div>
+        <div class="ml-auto">
+            cart
+        </div>
+    </nav>
+    <main>
+        <header class="flex bg-[url('/assets/bg.jpg')] bg-cover h-[calc(100vh-72px)] min-h-[400px]">
+            <div class="m-auto text-center">
+                <h1 class="text-3xl mb-8"><span class="italic">Man</span>Bags</h1>
+                <h1 class="mb-8 drop-shadow-lg text-7xl underline text-white decoration-black underline-offset-8">Clean &amp; Modern.</h1>
+                <p class="drop-shadow-lg text-lg mb-8">Luxury bags for men.</p>
+                <button id="btn-browse-collection" class="bg-black text-white uppercase px-6 py-4 cursor-pointer font-bold rounded-md hover:bg-zinc-700 transition-colors">Browse the collection</button>
+            </div>
+            
+        </header>
+        <section id="product-1" class="flex max-w-screen-xl mx-auto p-20 items-center gap-6">
+            <div class="min-w-[30%] max-w-[30%]"><img src="/assets/1.jpeg" alt="Alpine Elegance"></div>
+            <div class="flex-grow">
+                <h1 class="text-7xl">Alpine Elegance</h1>
+                <p class="mt-8">Introducing the "Alpine Elegance" - where pristine beauty meets unparalleled craftsmanship. Crafted from the finest white leather, this luxury bag is inspired by the serene and untouched splendor of mountain peaks. Its sleek design, combined with functional compartments, makes it an ideal companion for the modern man on the go. Silver-tone hardware and meticulous stitching showcase its premium quality. Whether you're heading to a business meeting or a weekend getaway, the Alpine Elegance ensures you carry your essentials with style and sophistication. Elevate your accessory game and make a statement with this timeless piece.</p>
+                <p class="text-2xl mt-8">€79.99</p>
+                <label class="text-sm mt-8 inline-block">Quantity</label>
+                <div class="grid grid-cols-[100px_1fr] gap-8">
+                    <input type="number" value="1", min="1" class="border border-black rounded-md text-center px-2">
+                    <button class="bg-black text-white uppercase px-6 py-4 cursor-pointer font-bold rounded-md hover:bg-zinc-700 transition-colors">Add to cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
   </body>
 </html>
